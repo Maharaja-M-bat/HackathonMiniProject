@@ -1,0 +1,10 @@
+{
+    "first_name":"abc",
+    "last_name":"cde",
+    "email":"abcgmail.com",
+    "phone_no":1234567890,
+    "organization_type":"College/University",
+    "company_name":"FGH Company",
+    "company_size":"1001-5000",
+    "country":"India"
+}
