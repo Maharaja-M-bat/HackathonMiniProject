@@ -13,6 +13,11 @@ it("Visiting and type with Invalid data",()=>{
     homepage.Nav()
     homepage.invalidType()
   })
+
+it("Checking URL",()=>{
+    homepage.Nav()
+    homepage.urlcheck();
+})
   
 
 
