@@ -1,3 +1,4 @@
+
 import homedata from "../../fixtures/homedata.json";
 class HomePage{
 
@@ -24,4 +25,9 @@ class HomePage{
     
     
     
+
+  
+
+    }
     export default HomePage; 
+
