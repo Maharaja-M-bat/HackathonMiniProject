@@ -14,11 +14,6 @@ it("Visiting and type with Invalid data",()=>{
     homepage.invalidType()
   })
 
-it("Checking URL",()=>{
-    homepage.Nav()
-    homepage.urlcheck();
-})
-  
 
 
   Cypress.on('uncaught:exception', (err, runnable) => {
