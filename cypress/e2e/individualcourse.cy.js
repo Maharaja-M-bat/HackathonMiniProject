@@ -10,7 +10,7 @@ describe('TS_04', () => {
         cy.get('h1[data-e2e="hero-title"]').should('be.visible')
 
     })
-
+  
     it('TC_16', () => {
         cy.on('uncaught:exception', (err, runnable) => { return false })
         cy.visit('https://www.coursera.org/search?query=web%20development')
