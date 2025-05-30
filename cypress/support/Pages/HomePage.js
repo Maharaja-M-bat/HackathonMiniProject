@@ -15,8 +15,19 @@ class HomePage{
     invalidType(){
         cy.get('#search-autocomplete-input').type(`${homedata.Invalid}{enter}`,{force:true})
     }
+
+    urlcheck(){
+
+  cy.url().should('include', 'coursera');
+}
+
+    }
     
     
+    
+
+  
+
     }
     export default HomePage; 
 

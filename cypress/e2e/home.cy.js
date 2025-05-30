@@ -13,7 +13,7 @@ it("Visiting and type with Invalid data",()=>{
     homepage.Nav()
     homepage.invalidType()
   })
-  
+
 
 
   Cypress.on('uncaught:exception', (err, runnable) => {
