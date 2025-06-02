@@ -26,4 +26,10 @@ describe('TS_04', () => {
         courseDetailsPage.logSkillsGained();
         courseDetailsPage.careerinsights();
     });
+     
+    it('TC_17 - Verify Modules and Career Insights',()=>{
+        courseDetailsPage.verifyCourseSeries();
+        courseDetailsPage.verifyCareerInsights();
+        
+    })
 });

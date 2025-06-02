@@ -20,9 +20,12 @@ class CourseDetailsPage {
         moduleHeadings: '[data-test="ModuleTitle"], .rc-ModuleTitle, h3[class="cds-119 css-1pxm1ir cds-121"]',
         skillsGainedList: 'ul[class="css-yk0mzy"]',
         salary: 'div #outcomes div[class="css-ynxfsy"] > span',
-        jobOpenings : 'div #outcomes div[class="css-ynxfsy"] > span'
+        jobOpenings : 'div #outcomes div[class="css-ynxfsy"] > span',
+        courseSeriesSectionHeading: 'span:contains("course series")',
+        outcomes: 'div #outcomes'
+        
     }
-
+    
     verifyCourseTitleVisibility() {
         cy.get(this.elements.heroTitle).should('be.visible');
     }
@@ -83,6 +86,22 @@ class CourseDetailsPage {
         });
 
     }
+
+    verifyCourseSeries() {
+        cy.get(this.elements.courseSeriesSectionHeading)
+            .should('be.visible')
+            .and('not.be.empty'); 
+        cy.log('Course Series section is visible.');
+    }
+
+    verifyCareerInsights() {
+        cy.get(this.elements.outcomes)
+            .should('be.visible')
+            .and('not.be.empty')
+        cy.log('Career Insights section is visible.');
+    }
+
+    
 }
 
 export const courseraPage = new CourseraPage();
