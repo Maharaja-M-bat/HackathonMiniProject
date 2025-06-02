@@ -1,5 +1,6 @@
 
 
+
 import { Degree } from "../support/Pages/OnlineDegrees";
 import HomePage from "../support/Pages/HomePage";
 describe('OnlineDegree', () => {
@@ -37,3 +38,4 @@ describe('OnlineDegree', () => {
         
     })
 });
+
