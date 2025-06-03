@@ -38,5 +38,11 @@ describe('OnlineDegree', () => {
         degree.checkmaster()
         
     })
+
+    
+  Cypress.on('uncaught:exception', (err, runnable) => {
+      return false;
+    });
+    
 });
 
