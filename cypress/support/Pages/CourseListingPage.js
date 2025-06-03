@@ -1,3 +1,4 @@
+import data from '../../fixtures/courselisting.json'
 class CourseListingPage {
 
 filter(){
@@ -23,9 +24,7 @@ filter(){
     expect(element).equal("Filters")
    })
 
-   //cy.get('#main').find('[data-testid="accordion-item"]').eq(3).click();
-
-   //cy.get('#cds-react-aria8138768039-\:r16\:-accordion-header > .cds-AccordionHeader-content > .cds-AccordionHeader-labelGroup > .css-6ecy9b').select("English")
+  
 }
 
 clickFilter(){
@@ -34,22 +33,25 @@ clickFilter(){
 clickLanguage(){
     cy.contains('button span','Language').should('be.visible').click({force:true})
 }
-selectLanguage(lan){
-    cy.contains('span',lan,{matchCase:false}).click({force:true})
+selectLanguage(language){
+    cy.contains('span',data[language],{matchCase:false}).click({force:true})
 }
 clickLevel(){
     cy.contains('button span','Level').should('be.visible').click({force:true})
 }
-selectLevel(lev){
-    cy.contains('span',lev,{matchCase:false}).click({force:true})
+selectLevel(){
+    cy.contains('span',data.level,{matchCase:false}).click({force:true})
 }
 ApplyFilter(){
     cy.contains('button span','Apply').should('be.visible').click({force:true})
 }
-checkResultLevel(level){
+checkResultLevel(){
     cy.get('[data-track-component="search_card"]').should('be.visible')
-    cy.get('.cds-CommonCard-metadata p').invoke('text').then((lev)=>{
-       expect(lev.split(" ")[0]).equal(level);
+    cy.get('.cds-CommonCard-metadata').then((lev)=>{
+        lev=lev.toArray();
+        lev.forEach((el)=>{
+            cy.wrap(el).find('p').invoke('text').then((level)=>expect(level.split(' ·')[0]).equal(data.level))
+        })
     })
 }
 showTitle(num){
@@ -86,8 +88,8 @@ clickshowMore(num){
      cy.contains('button',"show more",{matchCase:false}).invoke('css','visibility','visible').click({force:true});
     }
 }
-verifyLevel(level){
-   cy.get(`[data-testid="productDifficultyLevel:${level}-false"]`).should('not.exist');
+verifyLevel(){
+   cy.get(`[data-testid="productDifficultyLevel:${data.levelcheck}-false"]`).should('not.exist');
 }
 
 }

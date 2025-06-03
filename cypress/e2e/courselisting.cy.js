@@ -3,13 +3,9 @@ import HomePage from "../support/Pages/HomePage";
 const cl = new CourseListingPage();
 const homepage = new HomePage();
 describe("filter function",()=>{
-    let data;
     beforeEach(()=>{
         homepage.Nav()
         homepage.Typing()
-        cy.fixture('courselisting').then((d)=>{
-            data=d
-        })
     })
     it("TS_04",()=>{
         cl.filter()
@@ -17,21 +13,21 @@ describe("filter function",()=>{
     it("TS_05",()=>{
        cl.clickFilter();
        cl.clickLanguage();
-       cl.selectLanguage(data.language)
+       cl.selectLanguage("language")
        cl.clickLanguage()
        cl.clickLevel()
-       cl.selectLevel(data.level);
+       cl.selectLevel();
        cl.clickLevel();
        cl.ApplyFilter();
-       cl.checkResultLevel(data.level);
+       cl.checkResultLevel();
     })
     it("TS_06",()=>{
         cl.clickFilter();
         cl.clickLanguage();
-        cl.selectLanguage(data.language)
+        cl.selectLanguage("language")
         cl.clickLanguage()
         cl.clickLevel()
-        cl.selectLevel(data.level);
+        cl.selectLevel();
         cl.clickLevel();
         cl.ApplyFilter();
         cl.showTitle(2);
@@ -39,10 +35,10 @@ describe("filter function",()=>{
     it("TS_07",()=>{
         cl.clickFilter();
         cl.clickLanguage();
-        cl.selectLanguage(data.language)
+        cl.selectLanguage("language")
         cl.clickLanguage()
         cl.clickLevel()
-        cl.selectLevel(data.level);
+        cl.selectLevel();
         cl.clickLevel();
         cl.ApplyFilter();
         cl.showCoursePeriod(2);
@@ -50,22 +46,22 @@ describe("filter function",()=>{
     it("TS_08",()=>{
         cl.clickFilter();
         cl.clickLanguage();
-        cl.selectLanguage(data.language)
+        cl.selectLanguage("language")
         cl.clickLanguage()
         cl.clickLevel()
-        cl.selectLevel(data.level);
+        cl.selectLevel();
         cl.clickLevel();
         cl.ApplyFilter();
         cl.showRating(2);
     })
-    it.only('TS_09',()=>{
+    it('TS_09',()=>{
         cl.clickFilter();
         cl.clickLanguage();
         cl.clickshowMore(9)
-        cl.selectLanguage(data.rarelanguage)
+        cl.selectLanguage("rarelanguage")
         cl.clickLanguage()
         cl.clickLevel()
-        cl.verifyLevel(data.levelcheck)
+        cl.verifyLevel()
     })
 
 
