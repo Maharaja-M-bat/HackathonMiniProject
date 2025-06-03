@@ -28,63 +28,67 @@ filter(){
    //cy.get('#cds-react-aria8138768039-\:r16\:-accordion-header > .cds-AccordionHeader-content > .cds-AccordionHeader-labelGroup > .css-6ecy9b').select("English")
 }
 
-
-
-courselist(){
-       
-     
-     
-     
-        //cy.visit('https://www.coursera.org/search?query=Web%20Development');
-        cy.contains('button span','Filters').should('be.visible').click({force:true})
-        cy.contains('button span','Language').should('be.visible').click({force:true})
-        cy.contains('span','English',{matchCase:false}).click({force:true})
-        cy.contains('button span','Language').should('be.visible').click({force:true})
-        cy.contains('button span','Level').should('be.visible').click({force:true})
-        cy.contains('span','Beginner',{matchCase:false}).click({force:true})
-        cy.contains('button span','Apply').should('be.visible').click({force:true})
-        cy.get('[data-track-component="search_card"]').should('be.visible')
-        cy.get('.cds-CommonCard-metadata p').invoke('text').then((level)=>{
-         expect(level.split(" ")[0]).equal("Beginner");
-        })
-    
-     
-   
-       // cy.visit('https://www.coursera.org/search?query=Web%20Development');
-        
-        cy.get('#searchResults ul li').then((list)=>{
-         list=list.toArray().slice(0,2);
-         list.forEach((li)=>{
-             cy.wrap(li).find('a h3').invoke('text').then((title)=>cy.log(title))
-         })
-        
-        })
-      
- 
-        //cy.visit('https://www.coursera.org/search?query=Web%20Development');
-        
-         cy.get('#searchResults ul li').then((list)=>{
-             list=list.toArray().slice(0,2);
-             list.forEach((li)=>{
-                 cy.wrap(li).find('.cds-CommonCard-metadata').invoke('text').then((title)=>cy.log(title.split('·')[2]))
-             })
-            })
-      
-    
-       // cy.visit('https://www.coursera.org/search?query=Web%20Development');
-       
-         cy.get('#searchResults ul li').then((list)=>{
-             list=list.toArray().slice(0,2);
-             list.forEach((li)=>{
-                 cy.wrap(li).find('[aria-label="Rating"]').invoke('text').then((title)=>cy.log(title))
- 
-             })
-            })
-   
- 
- 
+clickFilter(){
+    cy.contains('button span','Filters').should('be.visible').click({force:true})
 }
-
+clickLanguage(){
+    cy.contains('button span','Language').should('be.visible').click({force:true})
+}
+selectLanguage(lan){
+    cy.contains('span',lan,{matchCase:false}).click({force:true})
+}
+clickLevel(){
+    cy.contains('button span','Level').should('be.visible').click({force:true})
+}
+selectLevel(lev){
+    cy.contains('span',lev,{matchCase:false}).click({force:true})
+}
+ApplyFilter(){
+    cy.contains('button span','Apply').should('be.visible').click({force:true})
+}
+checkResultLevel(level){
+    cy.get('[data-track-component="search_card"]').should('be.visible')
+    cy.get('.cds-CommonCard-metadata p').invoke('text').then((lev)=>{
+       expect(lev.split(" ")[0]).equal(level);
+    })
+}
+showTitle(num){
+    if(num>=0 && num<=12){
+        cy.get('#searchResults ul li').then((list)=>{
+            list=list.toArray().slice(0,num);
+            list.forEach((li)=>{
+                cy.wrap(li).find('a h3').invoke('text').then((title)=>cy.log(title))
+            })      
+           })
+    }
+    else{
+        cy.log('Enter Index less than 12')
+    }
+}
+showCoursePeriod(num){
+    cy.get('#searchResults ul li').then((list)=>{
+        list=list.toArray().slice(0,num);
+        list.forEach((li)=>{
+            cy.wrap(li).find('.cds-CommonCard-metadata').invoke('text').then((Period)=>cy.log(Period.split('·')[2]))
+        })
+       })
+}
+showRating(num){
+    cy.get('#searchResults ul li').then((list)=>{
+        list=list.toArray().slice(0,num);
+        list.forEach((li)=>{
+            cy.wrap(li).find('[aria-label="Rating"]').invoke('text').then((rating)=>cy.log(rating))
+        })
+       })
+}
+clickshowMore(num){
+    for(let i=0;i<num;i++){
+     cy.contains('button',"show more",{matchCase:false}).invoke('css','visibility','visible').click({force:true});
+    }
+}
+verifyLevel(level){
+   cy.get(`[data-testid="productDifficultyLevel:${level}-false"]`).should('not.exist');
+}
 
 }
 export default CourseListingPage
