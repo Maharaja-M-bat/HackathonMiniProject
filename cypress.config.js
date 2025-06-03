@@ -5,5 +5,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+    video: true, // Enable video recording
+    // Compress videos for smaller file size
   },
 });
