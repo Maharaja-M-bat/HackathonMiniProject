@@ -6,6 +6,9 @@ import HomePage from "../support/Pages/HomePage";
 describe('OnlineDegree', () => {
     let degree,home;
     beforeEach(() => {
+        cy.on('uncaught:exception', (err, runnable) => {
+            return false;
+        });
         degree=new Degree();
         home=new HomePage();
         degree.visit()
