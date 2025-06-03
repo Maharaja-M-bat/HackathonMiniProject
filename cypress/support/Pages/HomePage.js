@@ -4,8 +4,6 @@
 import homedata from "../../fixtures/homedata.json";
 class HomePage{
 
-
-
     Nav(){
         cy.visit('https://www.coursera.org/');
     }
@@ -19,9 +17,11 @@ class HomePage{
     }
 
     urlcheck(){
+          cy.url().should('include', 'coursera');
+    }
 
-  cy.url().should('include', 'coursera');
-}
 
     }
-export default HomePage; 
+
+    export default HomePage; 
+
