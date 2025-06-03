@@ -1,5 +1,7 @@
 {
     "level":"Beginner",
     "language":"English",
-    "course_index":1
+    "rarelanguage":"Croatian",
+    "course_index":1,
+    "levelcheck":"Advanced"
 }
