@@ -1,10 +1,19 @@
 {
-    "first_name":"abc",
-    "last_name":"cde",
-    "email":"abcgmail.com",
-    "phone_no":1234567890,
-    "organization_type":"College/University",
-    "company_name":"FGH Company",
-    "company_size":"1001-5000",
-    "country":"India"
+     "firstName": "Adhi",
+     "lastName": "Varman",
+     "email": "Adhi@abc.in",
+     "Inalid_email":"Adhi@com",
+     "phone": "464647467",
+     "rentalField": "Business",
+     "title": "Marketting",
+     "company": "Adhi_corp",
+     "employeeRange": "1-500",
+     "leadRequest": "Get in touch with sales",
+     "employeesToBuyFor": "1-4",
+     "country": "India",
+     "state": "Tamil Nadu",
+     "erroeMsgForName":"This field is required.",
+     "errorMsgForOrganization":"This field is required.",
+     "errorMsgForEmail":"Invalid Input",
+     "Confirmation_Msg":"Thank you for considering Coursera for Business"
 }
