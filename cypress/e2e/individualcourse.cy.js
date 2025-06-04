@@ -14,7 +14,7 @@ describe('TS_04', () => {
 
     it('TC_15 - Verify Course Details Page URL and Title', () => {
 
-        courseDetailsPage.verifyUrl('https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer');
+        courseDetailsPage.verifyUrl('https://www.coursera.org/professional-certificates/coursera-ux-design-toolkit');
         courseDetailsPage.verifyCourseTitleVisibility();
     });
 
