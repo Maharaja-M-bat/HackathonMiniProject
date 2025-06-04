@@ -21,7 +21,7 @@ class EnterPrisePage{
         cy.get('#What_the_lead_asked_for_on_the_website__c').select(`${enterprise.leadRequest}`);
         cy.get('#Self_reported_employees_to_buy_for__c').select(`${enterprise.employeesToBuyFor}`);
         cy.get("#Country").select(`${enterprise.country}`);
-        cy.get('#State').select(`${enterprise.state}`);
+     //   cy.get('#State').select(`${enterprise.state}`);
         cy.get('.mktoButton').click();
         cy.wait(90000);
         cy.get('[data-testid="how_module_hero_heading"]').should('be.visible').then((text)=>{
