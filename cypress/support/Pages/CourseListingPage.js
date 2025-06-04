@@ -6,15 +6,11 @@ filter(){
    // cy.contains('Filters').click({force:true})
    cy.get('#main').find('[data-testid="accordion-item"]').eq(1).click();
 
-   cy.contains('label', 'English')
-     .find('input[type="checkbox"]')
-     .check({force:true});
-   cy.get('#main').find('[data-testid="accordion-item"]').eq(3).click();
+   cy.contains('label', 'English').find('input[type="checkbox"]').check({force:true});
+   cy.get('#main').find('[data-testid="accordion-item"]').eq(3).click({force:true});
 
    
-   cy.contains('label', 'Beginner')
-     .find('input[type="checkbox"]')
-     .check({force:true});
+   cy.contains('label', 'Beginner').find('input[type="checkbox"]').check({force:true});
 
    cy.get('.cds-button-primary').click()
    cy.get('.css-h4ov36').click()
