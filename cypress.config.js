@@ -6,11 +6,13 @@ module.exports = defineConfig({
     defaultCommandTimeout:90000,
     chromeWebSecurity:false,
     setupNodeEvents(on, config) {
+      require('cypress-grep/src/plugin')(config);
+      return config;
     
       // implement node event listeners here
        
     },
-    video: true, // Enable video recording
+    // Enable video recording
     // Compress videos for smaller file size
   },
 });
