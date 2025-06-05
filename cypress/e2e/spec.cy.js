@@ -1,3 +1,4 @@
+
 import CourseListingPage from "../support/Pages/CourseListingPage";
 import HomePage from "../support/Pages/HomePage";
 import { courseraPage, courseDetailsPage } from '../support/Pages/IndividualCourse';
@@ -184,4 +185,3 @@ describe("Identifying Course",()=>{
     
 
 })
-

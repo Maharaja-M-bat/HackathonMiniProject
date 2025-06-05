@@ -35,6 +35,36 @@ selectLanguage(language){
 clickLevel(){
     cy.contains('button span','Level').should('be.visible').click({force:true})
 }
+SelectLevel(level){
+    cy.contains('span',level,{matchCase:false}).click({force:true}) 
+}
+clickShowMore(){
+    cy.get(".cds-AccordionRoot-focusContainer").eq(1).then((el)=>{
+        cy.wrap(el).find('button').then((button)=>{
+            if(button.length==2){
+                cy.wrap(button).eq(1).then((btn)=>{
+                    if(btn.length>0){
+                        cy.wrap(btn).invoke('css','visibility','visible').click({force:true});
+                        this.clickShowMore();
+                      }
+                })
+               
+            }
+           
+        })
+      
+    })
+    
+}
+countTotalLanguage(level){
+    let total=0;
+    cy.get("[data-testid*='language:']").each((lan)=>{
+        cy.log(lan.text())
+        total+= parseInt(lan.text().replace(/\D/g, ''), 10)     
+    }).then(()=>{
+        cy.log("Total Language in "+level+" "+total);
+    })
+}
 selectLevel(){
     cy.contains('span',data.level,{matchCase:false}).click({force:true})
 }
