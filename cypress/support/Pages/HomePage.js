@@ -5,7 +5,7 @@ import homedata from "../../fixtures/homedata.json";
 class HomePage{
 
     Nav(){
-        cy.visit('https://www.coursera.org/');
+        cy.visiting();
     }
 
     Typing(){
