@@ -14,6 +14,6 @@
      "state": "Tamil Nadu",
      "erroeMsgForName":"This field is required.",
      "errorMsgForOrganization":"This field is required.",
-     "errorMsgForEmail":"Invalid Input",
-     "Confirmation_Msg":"Thank you for considering Coursera for Business"
+     "errorMsgForEmail":"Must be valid email. example@yourdomain.com",
+     "Confirmation_Msg":"Thanks for your interest in Coursera for Business"
 }

@@ -35,11 +35,49 @@ describe("Identifying Course",()=>{
         homepage.Typing()
         courselistingpage.filter()
     })
+    it("TS_05",()=>{
+        homepage.Nav()
+        homepage.Typing()
+        cl.clickFilter();
+        cl.clickLevel()
+        cl.SelectLevel("Beginner");
+        cl.clickLevel();
+        cl.clickLanguage();
+        cl.clickShowMore()
+        cl.clickLanguage();
+        cl.clickLevel()
+        cl.SelectLevel("Beginner");
+        cl.SelectLevel("Intermediate");
+        cl.clickLevel();
+        cl.clickLanguage();
+        cl.clickShowMore()
+        cl.countTotalLanguage("Intermediate")
+        cl.clickLanguage();
+        cl.clickLevel()
+        cl.SelectLevel("Intermediate");
+        cl.SelectLevel("Advanced");
+        cl.clickLevel();
+        cl.clickLanguage();
+        cl.clickShowMore()
+        cl.countTotalLanguage("Advanced")
+        cl.clickLanguage();
+        cl.clickLevel()
+        cl.SelectLevel("Intermediate");
+        cl.SelectLevel("Mixed");
+        cl.clickLevel();
+        cl.clickLanguage();
+        cl.clickShowMore()
+        cl.countTotalLanguage("Mixed")
+        cl.clickLanguage();
+        
+        // cl.ApplyFilter();
+        // cl.checkResultLevel();
+    })
 
 
 
     
-    it("TS_05@smoke",()=>{
+    it("TS_06@smoke",()=>{
         homepage.Nav()
         homepage.Typing()
         cl.clickFilter();
@@ -52,7 +90,7 @@ describe("Identifying Course",()=>{
         cl.ApplyFilter();
         cl.checkResultLevel();
      })
-     it("TS_06",()=>{
+     it("TS_07",()=>{
         homepage.Nav()
         homepage.Typing()
          cl.clickFilter();
@@ -65,7 +103,7 @@ describe("Identifying Course",()=>{
          cl.ApplyFilter();
          cl.showTitle(2);
      })
-     it("TS_07",()=>{ homepage.Nav()
+     it("TS_08",()=>{ homepage.Nav()
         homepage.Typing()
          cl.clickFilter();
          cl.clickLanguage();
@@ -77,7 +115,7 @@ describe("Identifying Course",()=>{
          cl.ApplyFilter();
          cl.showCoursePeriod(2);
      })
-     it("TS_08",()=>{
+     it("TS_09",()=>{
         homepage.Nav()
         homepage.Typing()
          cl.clickFilter();
@@ -90,7 +128,7 @@ describe("Identifying Course",()=>{
          cl.ApplyFilter();
          cl.showRating(2);
      })
-     it('TS_09',()=>{
+     it('TS_10',()=>{
         homepage.Nav()
         homepage.Typing()
          cl.clickFilter();
@@ -103,36 +141,36 @@ describe("Identifying Course",()=>{
      })
  
  
-    it("TS_10",()=>{
+    it("TS_11",()=>{
         enterprisePage.visit();
         enterprisePage.urlCheck();
     })
-    it("TS_11 @smoke",()=>{
+    it("TS_12 @smoke",()=>{
         enterprisePage.visit();
         enterprisePage.formWithValidInput();
     })
-    it("TS_12",()=>{
+    it("TS_13",()=>{
         enterprisePage.visit();
         enterprisePage.formWithoutName();
     })
-    it("TS_13",()=>{
+    it("TS_14",()=>{
         enterprisePage.visit();
         enterprisePage.formWithoutOrganizationType();
     })
-    it("TS_14@smoke",()=>{
+    it("TS_15@smoke",()=>{
         enterprisePage.visit();
         enterprisePage.formWithInvalidEmail();
     })
 
-    it("TS_15@smoke",()=>{
+    it("TS_16@smoke",()=>{
         homepage.Nav();
         homepage.Typing();
         courseraPage.clickFirstCourseCard();
-        courseDetailsPage.verifyUrl('https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer');
+        courseDetailsPage.verifyUrl('https://www.coursera.org/professional-certificates/coursera-ux-design-toolkit');
         courseDetailsPage.verifyCourseTitleVisibility();
 
     })
-    it("TS_16",()=>{
+    it("TS_17",()=>{
         homepage.Nav();
         homepage.Typing();
         courseraPage.clickFirstCourseCard();
@@ -143,7 +181,7 @@ describe("Identifying Course",()=>{
         courseDetailsPage.careerinsights();
 
     })
-    it("TS_17",()=>{
+    it("TS_18",()=>{
         homepage.Nav();
         homepage.Typing();
         courseraPage.clickFirstCourseCard();
@@ -153,13 +191,13 @@ describe("Identifying Course",()=>{
 
     })
 
-    it('TC18', () => {
+    it('TC19', () => {
         degree.visit()
         degree.setProgramLevel();
         degree.clickApply();
         degree.checkUrl();
     });
-    it('TC19',()=>{
+    it('TC20',()=>{
         degree.visit()
         degree.setProgramLevel();
         degree.clickApply();
@@ -167,7 +205,7 @@ describe("Identifying Course",()=>{
         degree.clickApply();
         degree.checkData()
     })
-    it('TC20',()=>{
+    it('TC21',()=>{
         degree.visit()
         degree.setSubject()
         degree.clickApply();

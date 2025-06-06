@@ -1,6 +1,3 @@
-
-
-
 import homedata from "../../fixtures/homedata.json";
 class HomePage{
 

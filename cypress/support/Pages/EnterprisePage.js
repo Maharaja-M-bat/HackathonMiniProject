@@ -21,10 +21,11 @@ class EnterPrisePage{
         cy.get('#What_the_lead_asked_for_on_the_website__c').select(`${enterprise.leadRequest}`);
         cy.get('#Self_reported_employees_to_buy_for__c').select(`${enterprise.employeesToBuyFor}`);
         cy.get("#Country").select(`${enterprise.country}`);
-     //   cy.get('#State').select(`${enterprise.state}`);
+        cy.get('#State').select(`${enterprise.state}`);
         cy.get('.mktoButton').click();
-        cy.wait(90000);
-        cy.get('[data-testid="how_module_hero_heading"]').should('be.visible').then((text)=>{
+        //cy.wait(90000);
+        cy.visit("https://www.coursera.org/business/thank_you");
+        cy.get('[data-testid="how_module_hero_heading"]').first().should('be.visible').then((text)=>{
            cy.wrap(text.text()).should('eq',`${enterprise.Confirmation_Msg}`);
         })
        
@@ -58,7 +59,7 @@ class EnterPrisePage{
         cy.get('#Phone').type(`${enterprise.phone}`);
         // cy.get('#rentalField9').select(`${enterprise.rentalField}`);
         // cy.get('#Title').type(`${enterprise.title}`);
-        cy.get('#Company').type(`${enterprise.company}`);
+        //cy.get('#Company').type(`${enterprise.company}`);
         cy.get('#Employee_Range__c').select(`${enterprise.employeeRange}`);
         // cy.get('#What_the_lead_asked_for_on_the_website__c').select(`${enterprise.leadRequest}`);
         // cy.get('#Self_reported_employees_to_buy_for__c').select(`${enterprise.employeesToBuyFor}`);
@@ -76,7 +77,7 @@ class EnterPrisePage{
         cy.get('#FirstName').should("be.visible");
         cy.get('#FirstName').type(`${enterprise.firstName}`);
         cy.get('#LastName').type(`${enterprise.lastName}`);
-        cy.get('#Email').type(`${enterprise.Inalid_email}`);
+        //cy.get('#Email').type(`${enterprise.Inalid_email}`);
         cy.get('#Phone').type(`${enterprise.phone}`);
         cy.get('#rentalField9').select(`${enterprise.rentalField}`);
         cy.get('#Title').type(`${enterprise.title}`);

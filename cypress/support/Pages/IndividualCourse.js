@@ -6,7 +6,7 @@ class CourseraPage {
     clickFirstCourseCard() {
         cy.get(this.elements.productCards)
             .should('be.visible')
-            .first()
+            .eq(2)
             .invoke('removeAttr', 'target')
             .click({ force: true });
     }
