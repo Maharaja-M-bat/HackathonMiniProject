@@ -12,7 +12,12 @@ it("Visiting and type with valid data",()=>{
 it("Visiting and type with Invalid data",()=>{
     homepage.Nav()
     homepage.invalidType()
+    homepage.urlcheck()
+   
   })
+   
+
+  
 
 
 

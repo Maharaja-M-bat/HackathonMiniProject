@@ -22,12 +22,14 @@ describe("Identifying Course",()=>{
      
     it("TS_02@smoke",()=>{
         homepage.Nav()
+        homepage.invalidType()
         homepage.Typing()
     })
 
-    it("TS_03",()=>{
+    it.only("TS_03",()=>{
         homepage.Nav()
-        homepage.invalidType()
+        
+        homepage.urlcheck();
     })
 
     it("TS_04@smoke",()=>{
